@@ -1,0 +1,29 @@
+body {
+  background-color: grey;
+}
+
+h1{
+  
+}
+
+.about{
+  background-color: green;
+}
+
+header {
+  text-align: center;
+  background-color: orange;
+  font-weight: bold;
+  padding: 20px;
+  font-family: cursive;
+}
+
+.row{
+  padding-top: 23px;
+  height: auto;
+  width: auto;
+}
+
+p{
+  font-weight: bold;
+}

@@ -1,0 +1,26 @@
+{
+  "name": "ping-pong",
+  "version": "1.0.0",
+  "description": "web based game",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/memetibryan/pingpong.git"
+  },
+  "keywords": [
+    "pp"
+  ],
+  "author": "Bryan Memeti",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/memetibryan/pingpong/issues"
+  },
+  "homepage": "https://github.com/memetibryan/pingpong#readme",
+  "devDependencies": {
+    "browserify": "^14.3.0",
+    "gulp": "^3.9.1"
+  }
+}
