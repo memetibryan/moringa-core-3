@@ -19,6 +19,26 @@ var lib = require('bower-files')({
   }
 });
 gulp.task('bower', ['bowerJS', 'bowerCSS']);
+var browserSync = require('browser-sync').create();  //development server
+
+gulp.task('serve', function() {
+  browserSync.init({
+    server: {
+      baseDir: "./",
+      index: "index.html"
+    }
+  });
+  gulp.watch(['js/*.js'], ['jsBuild']); //specifying the array names and taskes to be auto-updated
+  gulp.watch(['bower.json'], ['bowerBuild']);  //This watches for any changes.
+});
+
+gulp.task('bowerBuild', ['bower'], function(){
+  browserSync.reload();
+});  //Now, we are watching the Bower manifest file for changes so that whenever we install or uninstall a frontend dependency our vendor files will be rebuilt and the browser reloaded with the bowerBuild task.
+
+gulp.task('jsBuild', ['jsBrowserify', 'jshint'], function(){
+  browserSync.reload();
+});  //This task lists an array of dependency tasks that need to be run whenever any of the js files change.
 
 gulp.task('bowerCSS', function () {
   return gulp.src(lib.ext('css').files)
