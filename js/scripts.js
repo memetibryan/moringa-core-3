@@ -1,4 +1,3 @@
-
 function Calculator(skinName) {
   this.skin = skinName;
 }
