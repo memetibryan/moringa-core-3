@@ -1,3 +1,4 @@
+//Remember to restart server incase of any change to the gilpfile.
 var gulp = require('gulp');
 var browserify = require('browserify');
 var source = require('vinyl-source-stream');
@@ -28,9 +29,15 @@ gulp.task('serve', function() {
       index: "index.html"
     }
   });
-  gulp.watch(['js/*.js'], ['jsBuild']); //specifying the array names and taskes to be auto-updated
+  gulp.watch(['js/*.js'], ['jsBuild']); //added a watcher to our server for js files.
   gulp.watch(['bower.json'], ['bowerBuild']);  //This watches for any changes.
+  gulp.watch(['*.html'], ['htmlBuild']); //added a watcher to our server for HTML files.
 });
+
+gulp.task('htmlBuild', function() {
+  browserSync.reload();              //htmlBuild task.
+});
+
 
 gulp.task('bowerBuild', ['bower'], function(){
   browserSync.reload();
