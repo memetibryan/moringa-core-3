@@ -34,6 +34,7 @@ gulp.task('serve', function() {
   gulp.watch(['js/*.js'], ['jsBuild']); //added a watcher to our server for js files.
   gulp.watch(['bower.json'], ['bowerBuild']); //This watchesgf for any changes.
   gulp.watch(['*.html'], ['htmlBuild']); //added a watcher to our server for HTML files.
+  gulp.watch(["scss/*.scss"], ['cssBuild']);
 });
 
 gulp.task('htmlBuild', function() {
@@ -126,5 +127,3 @@ gulp.task('cssBuild', function() {
     .pipe(gulp.dest('./build/css'))
     .pipe(browserSync.stream());
 });
-
-gulp.watch(["scss/*.scss"], ['cssBuild']);
